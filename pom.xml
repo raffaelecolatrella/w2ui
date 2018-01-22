@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>com.accenture.intesa.anage</groupId>
+  <artifactId>parent</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <packaging>pom</packaging>
+  
+  <name>Parent Project</name>
+  
+  <modules>
+    <module>backend</module>
+	<module>frontend</module>
+	<module>batch</module>
+	<module>commons</module>
+	<module>models</module>
+  </modules>
+  
+  	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<build.timestamp>${maven.build.timestamp}</build.timestamp>
+		<maven.build.timestamp.format>yyyy-MM-dd_HH:mm</maven.build.timestamp.format>
+	</properties>
+
+  	<developers>
+		<developer>
+			<id>raffaele.colatrella</id>
+			<name>Raffaele Colatrella</name>
+			<email>raffaele.colatrella@accenture.com</email>
+			<roles>
+				<role>Architect</role>
+			</roles>
+			<organization>Accenture (Milano)</organization>
+		</developer>
+	</developers>
+  
+   <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>

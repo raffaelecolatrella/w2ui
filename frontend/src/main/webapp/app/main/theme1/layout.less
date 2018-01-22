@@ -1,0 +1,58 @@
+body {
+    overflow: hidden;
+    background-color: #F6F6F6;
+    * { 
+        .box-sizing(border-box);  
+    }
+}
+
+#app-container {
+    position: absolute;
+    top     : 0px;
+    left    : 0px;
+    right   : 0px;
+    bottom  : 0px;
+    display : none;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAFCAYAAABmWJ3mAAAASElEQVQIW2MsKq3+z8bGzvDr108GEPjy6QODkIg4A2NFddN/mCBIAqTo3ZuXDIxp6dn/efgEwKqRdTKCjIJpR9YJloBpR9YJALzhI+c9hccRAAAAAElFTkSuQmCC);
+}
+
+#app-toolbar {
+    z-index : 1;
+    position: absolute;
+    top     : 0px;
+    left    : 0px;
+    height  : 32px;
+    width   : 100%;
+    .box-shadow(inset 0px 0px 55px rgba(10, 20, 30, 0.8));
+}    
+
+#app-header {
+    z-index : 2;
+    position: absolute;
+    top     : 32px;
+    left    : 0px;
+    right   : 0px;
+    height  : 60px;
+    width   : 100%;
+    padding : 17px 15px 0px 15px;
+    font-family: verdana;
+    font-size: 20px;
+    color: #606060;
+    text-shadow: 0px 1px 2px #fff;
+    .linear-gradient-vertical(#EBEBEB, #D2D4D4); 
+    border-bottom: 1px solid #999;
+    // .box-shadow(0 2px 5px #ccc);
+}
+
+#app-main {
+    z-index : 1;
+    position: absolute;
+    top     : 92px;
+    left    : 0px;
+    right   : 0px;
+    bottom  : 0px;
+    font-family: verdana;
+    font-size: 11px;
+    border-top: 1px solid white;
+    background-color: #fefefe !important;
+}

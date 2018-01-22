@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.accenture.intesa.anage</groupId>
+	<artifactId>frontend</artifactId>
+	<packaging>war</packaging>
+
+	<name>frontend</name>
+	
+	<parent>
+		<groupId>com.accenture.intesa.anage</groupId>
+		<artifactId>parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	
+	<dependencies> 
+        <!-- Servlet Library -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+ 
+    </dependencies>
+	
+	<build>
+	  <finalName>frontend</finalName>
+      <plugins>
+	  
+	   <!-- http://mvnrepository.com/artifact/org.eclipse.jetty/jetty-maven-plugin -->
+	<plugin>
+		<groupId>org.eclipse.jetty</groupId>
+		<artifactId>jetty-maven-plugin</artifactId>
+		<version>9.2.10.v20150310</version>
+		 
+		<configuration>
+			<scanIntervalSeconds>10</scanIntervalSeconds>
+			<webApp>
+				<contextPath>/app</contextPath>
+			</webApp>
+		</configuration>
+		 
+	</plugin>	  
+	  
+      <plugin>
+        <groupId>com.github.eirslett</groupId>
+        <artifactId>frontend-maven-plugin</artifactId>
+        <!-- NB! Set <version> to the latest released version of frontend-maven-plugin, like in README.md -->
+        <version>1.4</version>
+
+        <executions>
+
+          <execution>
+            <id>install node and npm</id>
+            <goals>
+              <goal>install-node-and-npm</goal>
+            </goals>
+            <configuration>
+              <!-- See https://nodejs.org/en/download/ for latest node and npm (lts) versions -->
+              <nodeVersion>v4.6.0</nodeVersion>
+              <npmVersion>2.15.9</npmVersion>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>npm install</id>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <!-- Optional configuration which provides for running any npm command -->
+            <configuration>
+              <arguments>install</arguments>
+            </configuration>
+          </execution>
+
+		<execution>
+			<id>gulp build</id>
+			<goals>
+				<goal>gulp</goal>
+			</goals>
+
+			<!-- optional: the default phase is "generate-resources" -->
+			<phase>generate-resources</phase>
+
+			<configuration>
+				<!-- optional: if not specified, it will run gulp's default
+				task (and you can remove this whole <configuration> section.) -->
+			</configuration>
+		</execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+	
+</project>
